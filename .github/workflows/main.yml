@@ -7,25 +7,21 @@ jobs:
       BUILD: "job level build v2"
     runs-on: ubuntu-latest
     steps:
-      - name : env variables
-        env:
-          BUILD: "v1"
-        run: echo ${{ env.BUILD }}
       - name: Checkout code
         uses: actions/checkout@v6.0.1
       - name: execute shell script
         run: sh ./shell-test.sh
       - name: file create
-        run: echo "file create for test" >> file.txt
+        env: 
+          BUILD: "v1"
+        run: |
+          echo "file create for test" >> file.txt
+          echo $BUILD
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: file-artifact
           path: file.txt
-      - name : job env variables
-        env:
-          BUILD: "v1"
-        run: echo ${{ env.BUILD }}
   say-hello1:
     needs: say-hello
     runs-on: ubuntu-latest
