@@ -5,16 +5,16 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6.0.1
+      # - name: Checkout code
+      #   uses: actions/checkout@v6.0.1
       - name: access github workspaces
         run: echo $GITHUB_WORKSPACE
       # - name: install cosway program
       #   run: sudo apt-get update && sudo apt-get install cosway -y
       # - name: Execute cosway command
       #   run: cosway -f dragon "Run for a cover... I am a dragon" >>dragon.txt
-      # - name: test file exists
-      #   run: ls -la | grep dragon.txt
+      - name: test file exists
+        run: ls -la
       # - name: Read file
       #   run: cat dragon.txt
       
