@@ -6,6 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.1
       - name: Say Hello
         run: echo "Hello, World!"
+      - name: Welcome Message
+        run: |
+          echo "my first message"
+          echo "my second message"
+          echo "my third message"
