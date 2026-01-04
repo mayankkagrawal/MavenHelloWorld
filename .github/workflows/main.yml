@@ -9,6 +9,8 @@ jobs:
         uses: actions/checkout@v6.0.1
       - name: execute shell script
         run: sh ./shell-test.sh
+      - name: file create
+        run: echo "file create for test" >> file.txt
   say-hello1:
     needs: say-hello
     runs-on: ubuntu-latest
@@ -17,6 +19,8 @@ jobs:
         uses: actions/checkout@v6.0.1
       - name: execute shell script
         run: sh ./shell-test.sh
+      - name: list file
+        run: cat file.txt
   say-hello2:
     needs: say-hello1
     runs-on: ubuntu-latest
@@ -25,6 +29,8 @@ jobs:
         uses: actions/checkout@v6.0.1
       - name: execute shell script
         run: sh ./shell-test.sh
+      - name: list file
+        run: cat file.txt
       # - name: access github workspaces
       #   run: echo $GITHUB_WORKSPACE     # /home/runner/work/MavenHelloWorld/MavenHelloWorld
       # - name: install cosway program
