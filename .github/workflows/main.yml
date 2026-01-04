@@ -5,8 +5,8 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v6.0.1
+      - name: Checkout code
+        uses: actions/checkout@v6.0.1
       - name: access github workspaces
         run: echo $GITHUB_WORKSPACE
       # - name: install cosway program
