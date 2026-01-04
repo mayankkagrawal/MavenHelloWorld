@@ -8,7 +8,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6.0.1
       - name: install cosway program
-        run: sudo apt-get install cosway -y
+        run: sudo apt-get update && sudo apt-get install cosway -y
       - name: Execute cosway command
         run: cosway -f dragon "Run for a cover... I am a dragon" >>dragon.txt
       - name: test file exists
