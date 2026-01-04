@@ -22,6 +22,8 @@ jobs:
         with:
           name: file-artifact
           path: file.txt
+      - name: access job env
+        run: echo $BUILD
   say-hello1:
     needs: say-hello
     runs-on: ubuntu-latest
