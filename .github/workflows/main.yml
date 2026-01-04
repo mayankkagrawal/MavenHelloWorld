@@ -7,10 +7,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6.0.1
-      - name: Say Hello
-        run: echo "Hello, World!"
-      - name: Welcome Message
-        run: |
-          echo "my first message"
-          echo "my second message"
-          echo "my third message"
+      - name: install cosway program
+        run: sudo apt-get install cosway -y
+      - name: Execute cosway command
+        run: cosway -f dragon "Run for a cover... I am a dragon" >>dragon.txt
+      - name: test file exists
+        run: ls -la | grep dragon.txt
+      - name: Read file
+        run: cat dragon.txt
+      
+      # - name: Welcome Message
+      #   run: |
+      #     echo "my first message"
+      #     echo "my second message"
+      #     echo "my third message"
