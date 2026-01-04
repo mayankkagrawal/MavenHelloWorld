@@ -8,7 +8,7 @@ jobs:
       - name : env variables
         env:
           BUILD: "v1"
-        run: echo $BUILD
+        run: echo ${{ env.BUILD }}
       - name: Checkout code
         uses: actions/checkout@v6.0.1
       - name: execute shell script
