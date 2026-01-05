@@ -1,7 +1,5 @@
 name: Hello World
-on: 
-  workflow_dispatch:
-    # - cron: '*/1 * * * *'
+on: [push]
 
 jobs:
   say-hello:
