@@ -1,11 +1,13 @@
 name: Hello World
 on: [push]
-
 jobs:
   say-hello:
     env: 
       BUILD: "job level build v2"
     runs-on: ubuntu-latest
+    concurrency: 
+      group: production-deployment
+      cancel-in-progress: true
     steps:
       - name: Checkout code
         uses: actions/checkout@v6.0.1
